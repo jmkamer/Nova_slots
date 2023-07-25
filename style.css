@@ -1,0 +1,42 @@
+body {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.slot-machine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 20px;
+    color: #000;
+}
+
+.slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-right: 1px solid #000;
+}
+
+.slot:last-child {
+    border-right: none;
+}
+
+#spin-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4747;
+    color: #fff;
+    cursor: pointer;
+}
