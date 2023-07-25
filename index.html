@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        #slots {
+            font-size: 50px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        #outcome {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 20px auto;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
 </head>
-    
+    <h1>NOVA SLOTS</h1>
 <body>
-     <div class="headd"> 
-         <h1>NOVA SLOTS</h1>
-         <br>
-     </div>
-    <div class="slot-machine">
-        <div class="slot">
-            <p id="slot1">🍎</p>
-        </div>
-        <div class="slot">
-            <p id="slot2">🍌</p>
-        </div>
-        <div class="slot">
-            <p id="slot3">🍒</p>
-        </div>
+    <div id="slots">
+        🍎 🍋 🍒
     </div>
-    <button id="spin-button">Spin!</button>
+    <button id="spin">Spin!</button>
+    <div id="outcome">
+        Spin the slots to play.
+    </div>
+
+    <script>
+        var fruits = ["🍎", "🍋", "🍒"];
+        var slots = document.getElementById("slots");
+        var outcome = document.getElementById("outcome");
+
+        document.getElementById("spin").addEventListener("click", function() {
+            var slotResults = [];
+            for (var i = 0; i < 3; i++) {
+                var fruit = fruits[Math.floor(Math.random() * fruits.length)];
+                slotResults.push(fruit);
+            }
+            slots.textContent = slotResults.join(" ");
+            
+            if (slotResults[0] === slotResults[1] && slotResults[1] === slotResults[2]) {
+                outcome.textContent = "You won! 🎉";
+            } else {
+                outcome.textContent = "You lost. 😞 Try again!";
+            }
+        });
+    </script>
 </body>
-<script src="script.js"></script>
 </html>
